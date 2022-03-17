@@ -17,10 +17,13 @@
 # Inherit from oneplus sm8250-common
 -include device/oneplus/sm8250-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/oneplus/instantnoodlep
+DEVICE_PATH := device/oneplus/instantnoodle
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
+
+# Display
+TARGET_SCREEN_DENSITY := 450
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
@@ -33,8 +36,7 @@ BOARD_ONEPLUS_DYNAMIC_PARTITIONS_SIZE := 7511998464
 BOARD_SUPER_PARTITION_SIZE := 15032385536
 
 # Recovery
-TARGET_RECOVERY_DENSITY := xxhdpi
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # inherit from the proprietary version
--include vendor/oneplus/instantnoodlep/BoardConfigVendor.mk
+-include vendor/oneplus/instantnoodle/BoardConfigVendor.mk

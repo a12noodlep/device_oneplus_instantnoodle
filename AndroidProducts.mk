@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/octavi_instantnoodlep.mk
+    $(LOCAL_DIR)/octavi_instantnoodle.mk
 
 COMMON_LUNCH_CHOICES := \
-    octavi_instantnoodlep-user \
-    octavi_instantnoodlep-userdebug \
-    octavi_instantnoodlep-eng
+    octavi_instantnoodle-user \
+    octavi_instantnoodle-userdebug \
+    octavi_instantnoodle-eng

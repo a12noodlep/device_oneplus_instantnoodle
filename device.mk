@@ -38,11 +38,18 @@ PRODUCT_COPY_FILES += \
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.recovery.target.rc
+
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/row/kona_bmi26x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kona_bmi26x_row.json \
+    $(LOCAL_PATH)/configs/sensors/row/kona_mmc5603x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kona_mmc5603x_0_row.json \
+    $(LOCAL_PATH)/configs/sensors/vzw/kona_T0_bmi26x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kona_T0_bmi26x_0_vzw.json \
+    $(LOCAL_PATH)/configs/sensors/vzw/kona_bmi26x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kona_bmi26x_0_vzw.json \
+    $(LOCAL_PATH)/configs/sensors/vzw/kona_mmc5603x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kona_mmc5603x_0_vzw.json
 
 # Wifi Overlay
 PRODUCT_PACKAGES += \
-    OnePlus8PWifiOverlay
+    OnePlus8WifiOverlay
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -50,4 +57,4 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 $(call inherit-product, device/oneplus/sm8250-common/common.mk)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/oneplus/instantnoodlep/instantnoodlep-vendor.mk)
+$(call inherit-product, vendor/oneplus/instantnoodle/instantnoodle-vendor.mk)

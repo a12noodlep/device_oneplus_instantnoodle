@@ -37,7 +37,7 @@
         <item>600</item>
         <item>1000</item>
     </integer-array>
-     
+
     <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
          percent. The length of this array is assumed to be one greater than
          config_ambientThresholdLevels. The darkening threshold is calculated as
@@ -99,22 +99,18 @@
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)
-
          Point 1:            (0, value[1]):             lux <= 0
          Point 2:     (level[1], value[2]):  0        < lux <= level[1]
          Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
          ...
          Point N+1: (level[N], value[N+1]):  level[N] < lux
-
          The control points must be strictly increasing.  Each control point
          corresponds to an entry in the brightness backlight values arrays.
          For example, if lux == level[1] (first element of the levels array)
          then the brightness will be determined by value[2] (second element
          of the brightness values array).
-
          Spline interpolation is used to determine the auto-brightness
          backlight values for lux levels between these control points.
-
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
         <item>1</item>
@@ -180,12 +176,10 @@
          in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
          config_screenBrightnessMaximumNits, the display brightness is defined as the measured
          brightness of an all-white image.
-
          If this is defined then:
             - config_autoBrightnessLcdBacklightValues should not be defined
             - config_screenBrightnessNits must be defined
             - config_screenBrightnessBacklight must be defined
-
          This array should have size one greater than the size of the config_autoBrightnessLevels
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
@@ -321,7 +315,6 @@
          should be measured with an all white image while the display is in the fully on state.
          Note that this value should *not* reflect the maximum brightness value for any high
          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
-
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
         <item>2.2</item>
@@ -583,7 +576,6 @@
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
          values in the config_screenBrightnessNits array.
-
          This array should be equal in size to config_screenBrightnessBacklight. -->
     <integer-array name="config_screenBrightnessBacklight">
         <item>1</item>
@@ -882,7 +874,6 @@
          to the corresponding value of the array. The new brightening hysteresis constraint value
          is the n-th element of config_dynamicHysteresisBrightLevels, and the new darkening
          hysteresis constraint value is the n-th element of config_dynamicHysteresisDarkLevels.
-
          The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
          condition                      calculated index
          value < lux[0]                 0
@@ -939,7 +930,7 @@
          appended after the path string to interpret coordinates in dp instead of px units.
          Note that a physical cutout should be configured in pixels for the best results.
          -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -525 79.5 A 41.5 41.5 0 0 1 -608 79.5 A 41.5 41.5 0 0 1 -525 79.5 Z M -608,0 L -525,0 Z M -720,0 L -720,121 Z</string>
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -407 68.5 A 34 34 0 0 1 -475 68.5 A 34 34 0 0 1 -407 68.5 Z M -475,0 L -407,0 Z M -540,0 L -540,102.5 Z</string>
 
     <!-- Like config_mainBuiltInDisplayCutout, but this path is used to report the
          one single bounding rect per device edge to the app via
@@ -949,8 +940,8 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
         M 0,0
-        H 224
-        V 121
+        H 156
+        V 102.5
         H 0
         Z
         @left
@@ -969,13 +960,13 @@
          If a non-zero value is set for config_defaultPeakRefreshRate, then
          config_defaultRefreshRate may be set to 0, in which case the value set for
          config_defaultPeakRefreshRate will act as the default frame rate. -->
-    <integer name="config_defaultRefreshRate">120</integer>
+    <integer name="config_defaultRefreshRate">90</integer>
 
     <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
          the framework from using higher refresh rates, even if display modes with higher refresh
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
-    <integer name="config_defaultPeakRefreshRate">120</integer>
+    <integer name="config_defaultPeakRefreshRate">90</integer>
 
     <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
      <integer-array name="config_udfps_sensor_props" translatable="false" >
@@ -984,8 +975,8 @@
         <item>sensorLocationY</item>
         <item>sensorRadius</item>
       -->
-        <item>720</item>
-        <item>2550</item>
-        <item>116</item>
+        <item>540</item>
+        <item>1910</item>
+        <item>87</item>
      </integer-array>
 </resources>

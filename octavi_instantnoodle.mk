@@ -19,24 +19,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from instantnoodlep device
-$(call inherit-product, device/oneplus/instantnoodlep/device.mk)
+$(call inherit-product, device/oneplus/instantnoodle/device.mk)
 
 # Inherit some common OctaviOS stuff.
 $(call inherit-product, vendor/octavi/config/common_full_phone.mk)
 
 # Boot Animation
-TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := octavi_instantnoodlep
-PRODUCT_DEVICE := instantnoodlep
+PRODUCT_NAME := octavi_instantnoodle
+PRODUCT_DEVICE := instantnoodle
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := IN2023
+PRODUCT_MODEL := IN2013
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=OnePlus8Pro
+    PRODUCT_DEVICE=OnePlus8
 
 #Maintainer
 OCTAVI_DEVICE_MAINTAINER := ItsBunnyBatch
